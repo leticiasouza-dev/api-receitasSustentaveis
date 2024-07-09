@@ -1,5 +1,5 @@
-const express = require('express')
-const app = express();
+import e from "express";
+const app = e();
 
 let receita = 'Macarrão'
 
