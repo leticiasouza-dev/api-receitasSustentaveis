@@ -1,4 +1,6 @@
-export default bancoDeReceitas = [
+import Receita from "../models/ReceitaModel.js"
+
+const bancoDeReceitas = [
     new Receita(
         1,
         "Salada de Quinoa",
@@ -160,3 +162,5 @@ export default bancoDeReceitas = [
         "10 minutos"
     )
 ]
+
+export default bancoDeReceitas
