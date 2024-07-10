@@ -1,7 +1,7 @@
 import e from "express";
 const app = e();
 
-let receita = 'Macarrão'
+let receita = 'Macarrão';
 
 app.get('/', (req, res) => {
     res.json({Receita: receita})
