@@ -1,11 +1,8 @@
 import e from "express";
+import { rotaConsultaReceitas } from "./routesReceitas.js";
 const app = e();
 
-let receita = 'Macarrão';
-
-app.get('/', (req, res) => {
-    res.json({Receita: receita})
-})
+app.use(rotaConsultaReceitas);
 
 app.listen(8080, () => {
     const link = 'http://localhost:8080';
