@@ -1,9 +1,10 @@
 import e from "express";
-import { rotaConsultaReceitas,rotaReceitasFiltradasId } from "./src/routes/receitas.routes.js";
+import { rotaConsultaIngredientesPorRegiao, rotaConsultaReceitas,rotaReceitasFiltradasId } from "./src/routes/receitas.routes.js";
 
 const app = e();
 
 app.use(rotaConsultaReceitas);
+app.use(rotaConsultaIngredientesPorRegiao)
 app.use(rotaReceitasFiltradasId);
 
 
