@@ -1,10 +1,11 @@
 import e from "express";
-import { rotaConsultaReceitas,rotaReceitasFiltradasId } from "./routesReceitas.js";
+import { rotaConsultaReceitas,rotaReceitasFiltradasId } from "./src/routes/receitas.routes.js";
 
 const app = e();
 
 app.use(rotaConsultaReceitas);
 app.use(rotaReceitasFiltradasId);
+
 
 app.listen(8080, () => {
     const link = 'http://localhost:8080';

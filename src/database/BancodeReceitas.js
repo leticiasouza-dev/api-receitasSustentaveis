@@ -1,4 +1,4 @@
-import Receita from "../models/ReceitaModel.js"
+import Receita from "../models/receita.model.js"
 
 const bancoDeReceitas = [
     new Receita(
