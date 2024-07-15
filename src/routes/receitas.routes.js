@@ -1,6 +1,6 @@
 import { Router } from "express";
-import  {consultaIngredientesPorRegiao, consultaReceitas}  from "../controllers/consultas.js";
-import { filtrandoReceitasPeloId, filtrandoIngredientesPelaRegiao} from "../controllers/filtragens.js";
+import  {consultaIngredientesPorRegiao, consultaReceitas}  from "../controllers/consultas.controller.js";
+import { filtrandoReceitasPeloId, filtrandoIngredientesPelaRegiao} from "../controllers/filtragens.controller.js";
 
 // Rotas de Consultas
 const rotaConsultaReceitas = Router();

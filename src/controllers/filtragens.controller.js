@@ -8,7 +8,6 @@ export const filtrandoReceitasPeloId = (req, res) => {
     res.status(200).json(filtroReceitasId);
 }
 
-
 export const filtrandoIngredientesPelaRegiao = (req, res) => {
     const regiao = String(req.params.regiao);
 
