@@ -9,6 +9,13 @@ A API de Receitas Sustentáveis é um serviço que fornece dados sobre receitas 
 - Filtro de Receitas pelo ID
 - 
 
+## Padrão MRC - Usado na API
+
+O padrão MRC (Model-Router-Controller) é uma variação do padrão MVC (Model-View-Controller) que omite a camada de visão (View). Ele é comumente usado em APIs, onde a interface do usuário (View) não é gerenciada pelo servidor, mas por clientes front-end como aplicações web ou móveis. Este padrão ajuda a organizar o código de maneira modular e clara, separando responsabilidades distintas dentro da aplicação.
+
+
+## Uso/Exemplos**
+
 
 ## Autores
 
