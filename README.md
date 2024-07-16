@@ -7,7 +7,7 @@ A API de Receitas Sustentáveis é um serviço que fornece dados sobre receitas 
 - Consulta de Receitas Sustentáveis 
 - Consulta de Ingredientes por Região
 - Filtro de Receitas pelo ID
-- 
+- Filtro de Receitas pelo Ingrediente 
 
 ## Padrão MRC - Usado na API
 
