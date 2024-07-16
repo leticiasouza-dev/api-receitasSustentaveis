@@ -16,8 +16,16 @@ export const filtroReceitasPeloIngrediente  = (req, res) => {
     if (filtroReceitasPeloIngrediente.length === 0) {
         return res.status(404).json({ message: 'Nenhuma receita encontrada com esse ingrediente.' });
     }
-    
+
     res.status(200).json(filtroReceitasPeloIngrediente);
+}
+
+export const filtroReceitasPreferenciaDieta = (req, res) => {
+    const preferenciaDieta = req.params.preferenciaDieta;
+
+    const filtroReceitasPelaPreferenciaDieta = bancoDeReceitas.filter(receita => receita.preferenciaDieta.includes(preferenciaDieta))
+
+    res.status(200).json(filtroReceitasPelaPreferenciaDieta);
 }
 
 export const filtrandoIngredientesPelaRegiao = (req, res) => {
