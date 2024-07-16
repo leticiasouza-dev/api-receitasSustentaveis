@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-
-
-
-=======
 # API DE RECEITAS SUSTENTÁVEIS - EM CONSTRUÇÃO
 
 A API de Receitas Sustentáveis é um serviço que fornece dados sobre receitas culinárias focadas em sustentabilidade. O objetivo principal é promover práticas alimentares que minimizem o impacto ambiental, incentivando o uso de ingredientes sazonais e locais, reduzindo o desperdício de alimentos e promovendo escolhas mais conscientes.
@@ -25,4 +20,3 @@ O padrão MRC (Model-Router-Controller) é uma variação do padrão MVC (Model-
 ## Autores
 
 - [Letícia Souza](https://github.com/leticiasouza-dev)
->>>>>>> 5140c2ad43f9e893a4fa38c709fa97fa0616782c

@@ -8,9 +8,22 @@ export const filtrandoReceitasPeloId = (req, res) => {
     res.status(200).json(filtroReceitasId);
 }
 
+export const filtroReceitasPeloIngrediente  = (req, res) => {
+    const ingrediente = req.params.ingredientes;
+
+    const filtroReceitasPeloIngrediente = bancoDeReceitas.filter(receita => receita.ingredientes.includes(ingrediente));
+
+    if (filtroReceitasPeloIngrediente.length === 0) {
+        return res.status(404).json({ message: 'Nenhuma receita encontrada com esse ingrediente.' });
+    }
+    
+    res.status(200).json(filtroReceitasPeloIngrediente);
+}
+
 export const filtrandoIngredientesPelaRegiao = (req, res) => {
     const regiao = String(req.params.regiao);
 
     const filtroIngredientesRegiao = ingredientesPorRegiao.filter(ingrediente => ingrediente.regiao === regiao);
     res.status(200).json(filtroIngredientesRegiao);
 }
+

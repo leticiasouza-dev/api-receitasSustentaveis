@@ -1,6 +1,6 @@
 import { Router } from "express";
 import  {consultaIngredientesPorRegiao, consultaReceitas}  from "../controllers/consultas.controller.js";
-import { filtrandoReceitasPeloId, filtrandoIngredientesPelaRegiao} from "../controllers/filtragens.controller.js";
+import { filtrandoReceitasPeloId, filtrandoIngredientesPelaRegiao, filtroReceitasPeloIngrediente} from "../controllers/filtragens.controller.js";
 
 // Rotas de Consultas
 const rotaConsultaReceitas = Router();
@@ -13,8 +13,11 @@ rotaConsultaIngredientesPorRegiao.get('/ingredientesPorRegiao', consultaIngredie
 const rotaReceitasFiltradasId = Router();
 rotaReceitasFiltradasId.get('/receitas/:id', filtrandoReceitasPeloId);
 
+const rotaReceitasFiltradasIngredientes = Router();
+rotaReceitasFiltradasIngredientes.get('/receitas/ingrediente/:ingredientes', filtroReceitasPeloIngrediente);
+
 const rotaIngredientesFiltradosRegiao = Router();
 rotaIngredientesFiltradosRegiao.get('/ingredientesPorRegiao/:regiao', filtrandoIngredientesPelaRegiao)
 
 
-export {rotaConsultaReceitas, rotaReceitasFiltradasId, rotaConsultaIngredientesPorRegiao, rotaIngredientesFiltradosRegiao};
+export {rotaConsultaReceitas, rotaReceitasFiltradasId, rotaConsultaIngredientesPorRegiao, rotaIngredientesFiltradosRegiao, rotaReceitasFiltradasIngredientes};
