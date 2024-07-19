@@ -1,6 +1,7 @@
 import { Router } from "express";
 import  {consultaIngredientesPorRegiao, consultaReceitas}  from "../controllers/consultas.controller.js";
 import { filtrandoReceitasPeloId, filtrandoIngredientesPelaRegiao, filtroReceitasPeloIngrediente, filtroReceitasPreferenciaDieta} from "../controllers/filtragens.controller.js";
+import { adicionarReceita } from "../controllers/adicionandoReceita.controllers.js";
 
 // Rotas de Consultas
 const rotaConsultaReceitas = Router();
@@ -22,6 +23,9 @@ rotaReceitasFiltradasPreferenciaDieta.get('/receitas/preferenciaDieta/:preferenc
 const rotaIngredientesFiltradosRegiao = Router();
 rotaIngredientesFiltradosRegiao.get('/ingredientesPorRegiao/:regiao', filtrandoIngredientesPelaRegiao)
 
+// Rota adicionando Rceita:
+const rotaAdicionandoNovaReceita = Router();
+rotaAdicionandoNovaReceita.post('/receitas/novaReceita/', adicionarReceita);
 
 
 export {rotaConsultaReceitas, 
@@ -29,5 +33,6 @@ export {rotaConsultaReceitas,
         rotaConsultaIngredientesPorRegiao, 
         rotaIngredientesFiltradosRegiao, 
         rotaReceitasFiltradasIngredientes, 
-        rotaReceitasFiltradasPreferenciaDieta
+        rotaReceitasFiltradasPreferenciaDieta,
+        rotaAdicionandoNovaReceita
 };
