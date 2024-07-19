@@ -6,7 +6,8 @@ import {
     rotaReceitasFiltradasId, 
     rotaReceitasFiltradasIngredientes, 
     rotaReceitasFiltradasPreferenciaDieta,
-    rotaAdicionandoNovaReceita
+    rotaAdicionandoNovaReceita,
+    rotaDeletandoReceita
 } from "./src/routes/receitas.routes.js";
 
 const app = e();
@@ -20,6 +21,7 @@ app.use(rotaIngredientesFiltradosRegiao);
 app.use(rotaReceitasFiltradasIngredientes);
 app.use(rotaReceitasFiltradasPreferenciaDieta)
 app.use(rotaAdicionandoNovaReceita)
+app.use(rotaDeletandoReceita)
 
 app.listen(8080, () => {
     const link = 'http://localhost:8080';
