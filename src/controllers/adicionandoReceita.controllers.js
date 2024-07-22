@@ -2,13 +2,43 @@ import bancoDeReceitas from '../database/BancodeReceitas.js';
 import Receita from '../models/receita.model.js';
 
 export const adicionarReceita = (req, res) => {
-    const {nome, ingredientes, modoDePreparo, preferenciaDieta, tempoPreparo} = req.body;
+    try{
+        const {nome, ingredientes, modoDePreparo, preferenciaDieta, tempoPreparo} = req.body;
 
-    const id = bancoDeReceitas.length + 1; 
+        // tratamento de erro para o nome
+        if(!nome || typeof nome !== 'string' || nome.trim() === ''){
+            return res.status(400).json({erro: "O campo deverá se chamar nome, é obrigatório e deverá ser uma string" });
+        }
 
-    const novaReceita = new Receita(id, nome, ingredientes, modoDePreparo, preferenciaDieta, tempoPreparo);
+        // tratamento de erro para os ingredientes
+        if(!ingredientes || ingredientes.length === 0 || ingredientes.length === 0){
+            return res.status(400).json({erro: "O campo deverá se chamar ingredientes, é obrigatório e deverá conter pelo menos um item"})
+        }
 
-    bancoDeReceitas.push(novaReceita);
+        // tratamento de erro para o modo de preparo 
+        if(!modoDePreparo || typeof modoDePreparo !== 'string' || modoDePreparo.trim() === ''){
+            return res.status(400).json({erro: "O campo deverá se chamar modoDePreparo, é obrigatório e deverá ser uma string"})
+        }
 
-    res.status(200).json(novaReceita);
+        // tratamento de erro para preferencia de  dieta
+        if(!preferenciaDieta || typeof preferenciaDieta !== 'string' || preferenciaDieta.trim() === ''){
+            return res.status(400).json({erro: "O campo deverá se chamar preferenciaDieta, é obrigatório e deverá ser uma string"})
+        }
+
+        // tratamento de erro para tempo de preparo
+        if(!tempoPreparo || typeof tempoPreparo !== 'string' || tempoPreparo.trim() === ''){
+            return res.status(400).json({erro: "O campo deverá se chamar tempoPreparo, é obrigatório e deverá ser uma string, exemplo: 40 minutos"})
+        }
+
+        const id = bancoDeReceitas.length + 1; 
+
+        const novaReceita = new Receita(id, nome, ingredientes, modoDePreparo, preferenciaDieta, tempoPreparo);
+
+        bancoDeReceitas.push(novaReceita);
+
+        res.status(200).send("Receita adicionada com sucesso");
+    } catch{
+        res.status(400).send("Ocorreu um erro ao adicionar uma nova receita");
+    }
+    
 }
