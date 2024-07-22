@@ -36,9 +36,8 @@ export const adicionarReceita = (req, res) => {
 
         bancoDeReceitas.push(novaReceita);
 
-        res.status(200).send("Receita adicionada com sucesso");
-    } catch{
-        res.status(400).send("Ocorreu um erro ao adicionar uma nova receita");
-    }
-    
+        res.status(200).json({Sucesso: "Receita adicionada com sucesso"});
+    } catch (erro){
+        res.status(500).json({Erro: erro});
+    }   
 }
